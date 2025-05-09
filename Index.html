@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Austin Ticknor Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Lora&family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <a href="index.html" title="Back to Home">
+        <img src="Images/ProjectInformation/LogoBW.png" alt="Austin Ticknor Logo" class="logo">
+      </a>
+      <div class="name-stack">
+        <h1 class="name-line">Austin</h1>
+        <h1 class="name-line">Ticknor</h1>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content-area">
+    <section class="hero">
+      <h2>Welcome to My Portfolio</h2>
+      <p>A curated selection of academic and professional architecture projects.</p>
+    </section>
+
+    <section class="image-rotator">
+      <div class="rotator-container">
+        <button class="arrow left" onclick="prevImage()">&#10094;</button>
+        <div class="image-wrapper">
+          <img src="Images/Project1/IsoViewRender.jpg" alt="Observation Tower Axonometric" id="rotatingImage">
+          <p id="caption">Observation Tower</p>
+        </div>
+        <button class="arrow right" onclick="nextImage()">&#10095;</button>
+      </div>
+    </section>
+
+    <section class="project-description">
+      <p>
+        Hello, my name is Austin Ticknor. This portfolio showcases selected works from
+        my academic and professional experiences. I am currently completing my Bachelor’s degree
+        in Architecture at Texas Tech University, and plan to pursue my Master’s degree
+        upon graduation. As an aspiring architect, my aim is to positively impact peers, clients,
+        and the broader community through thoughtful and meaningful design.
+      </p>
+    </section>
+
+    <section id="projects" class="project-content">
+      <h2>Projects</h2>
+      <div class="divider"></div>
+      <div class="divider"></div>
+      <div class="project-grid">
+        <a href="Projects/The Observation Tower.html">The Observation Tower</a>
+        <a href="Projects/The CASP Art School.html">The CASP Art School</a>
+        <a href="Projects/The Cohort Pools.html">The Cohort Pools</a>
+        <a href="Projects/Cardinal Hall.html">Cardinal Hall</a>
+        <a href="Projects/Firm Work.html">Firm Work</a>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="about-wrapper">
+        <img src="Images/ProjectInformation/PersonalImage.jpg" alt="Austin Ticknor Portrait" class="about-photo">
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p>
+            Hi, I'm Austin Ticknor. My journey into architecture began with a pivotal moment: winning first place in a Technology Student Association competition. This achievement inspired me to pursue architecture as my major and set me on the path I'm on today.
+            My first professional experience came from helping my dad remodel his office kitchen. I modeled the space in Revit and created drawings for contractors, giving me a practical introduction to the design and construction process.
+            In Fall 2024, I collaborated with fellow architecture and interior design students to create Cardinal Hall. This project underscored the importance of teamwork and gave me a deeper understanding of practical design, code implementation, and the real-world impact of architecture.
+            Working at Williams Tharp Architecture from January 2024 to March 2025 further honed my skills. I gained extensive experience with Revit and Twinmotion, and learned how an architecture firm operates, solidifying my commitment to the field.
+            Ultimately, my goal is to create architecture that benefits the lives of those who experience it. I believe architecture plays a pivotal role in shaping community culture, and my faith in Christ motivates me to design spaces that foster a sense of community and well-being. I strive to blend traditional values with the beauty of nature, creating timeless and inspiring designs that are bigger than myself.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Austin Ticknor</p>
+  </footer>
+
+  <script>
+    const images = [
+      { src: "Images/Project1/MainAxo.jpg", caption: "The Observation Tower" },
+      { src: "Images/Project2/MainAXO.jpg", caption: "The CASP Art School" },
+      { src: "Images/Project3/CohortPools.jpg", caption: "The Cohort Pools" },
+      { src: "Images/Project4/CardinalHallExterior.jpg", caption: "Cardinal Hall" }
+    ];
+
+    let index = 0;
+    const imgElement = document.getElementById("rotatingImage");
+    const captionElement = document.getElementById("caption");
+
+    function updateImage() {
+      imgElement.style.opacity = 0;
+      setTimeout(() => {
+        imgElement.src = images[index].src;
+        captionElement.textContent = images[index].caption;
+        imgElement.style.opacity = 1;
+      }, 300);
+    }
+
+    function nextImage() {
+      index = (index + 1) % images.length;
+      updateImage();
+    }
+
+    function prevImage() {
+      index = (index - 1 + images.length) % images.length;
+      updateImage();
+    }
+
+    setInterval(nextImage, 4000);
+  </script>
+</body>
+</html>

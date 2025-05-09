@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cardinal Hall - Austin Ticknor</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Lora&family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <a href="../index.html" title="Back to Home">
+        <img src="../Images/ProjectInformation/LogoBW.png" alt="Austin Ticknor Logo" class="logo">
+      </a>
+      <div class="name-stack">
+        <h1 class="name-line">Austin</h1>
+        <h1 class="name-line">Ticknor</h1>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content-area">
+    <section class="hero">
+      <h2>Cardinal Hall</h2>
+      <p>Spring 2024</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="project-content">
+      <img src="../Images/Project4/CardinalHallExterior.jpg" alt="Exterior View - Cardinal Hall" class="project-image">
+    </section>
+
+    <section class="project-description">
+      <h3>Design Concept</h3>
+      <p>
+        The vision of our structure is centered around the concept of a compass. A timeless tool of orientation, 
+        the compass has guided humanity for centuries—both physically and metaphorically. It is also a symbol shared 
+        by the disciplines of engineering, interior design, and architecture, which this building seeks to unite. 
+        Inspired by its form and function, our project aspires to orient students and faculty toward collaboration, 
+        innovation, and professional growth.
+      </p>
+
+      <section class="image-rotator">
+        <div class="rotator-container">
+          <button class="arrow left" onclick="prevImage()">&#10094;</button>
+          <div class="image-wrapper">
+            <img src="../Images/Project4/Exterior-Se2.jpg" alt="Main Facade" id="rotatingImage">
+            <p id="caption">Cardinal Hall Main Entry</p>
+          </div>
+          <button class="arrow right" onclick="nextImage()">&#10095;</button>
+        </div>
+      </section>
+
+      <h3>Context and Campus Integration</h3>
+      <p>
+        Located adjacent to the Texas Tech University library and student union, Cardinal Hall is designed to bring 
+        together students from across disciplines within a modern environment that respects the campus's Spanish Renaissance 
+        architectural heritage. The building offers a balance between tradition and innovation—integrating transparency, 
+        sustainability, and spatial adaptability to promote connection with the surrounding campus.
+      </p>
+
+      <h3>Floor Plans</h3>
+      <div class="image-row">
+        <img src="../Images/Project4/FirstFloor.jpg" alt="First Floor Plan">
+        <img src="../Images/Project4/SecondFloor.jpg" alt="Second Floor Plan">
+      </div>
+      <div class="image-row">
+        <img src="../Images/Project4/ThirdFloor.jpg" alt="Third Floor Plan">
+        <img src="../Images/Project4/FourthFloor.jpg" alt="Fourth Floor Plan">
+      </div>
+
+      <h3>Program and Spatial Strategy</h3>
+      <p>
+        This structure fosters interdisciplinary collaboration by offering a mix of open office layouts, flexible studio 
+        spaces, and private work areas suited for individuals and teams. Its multifunctional design ensures that each discipline's 
+        needs are met through dedicated, adaptable workspaces. Workshops for concrete, metal, and wood fabrication, along with 
+        a print lab and tech-focused rooms supporting virtual reality and programming, equip students with vital hands-on 
+        resources and emerging technologies.
+      </p>
+
+      <h3>Elevations</h3>
+      <div class="image-row">
+        <img src="../Images/Project4/NorthElevation.jpg" alt="North Elevation">
+        <img src="../Images/Project4/SouthElevation.jpg" alt="South Elevation">
+      </div>
+      <div class="image-row">
+        <img src="../Images/Project4/EastElevation.jpg" alt="East Elevation">
+        <img src="../Images/Project4/WestElevation.jpg" alt="West Elevation">
+      </div>
+
+      <h3>Connectivity and Circulation</h3>
+      <p>
+        At the heart of the center are conference and presentation rooms that support academic collaboration and faculty engagement. 
+        Student amenities are integrated throughout to encourage productivity and strengthen the community atmosphere. The layout 
+        of the building emphasizes connection—both between students and between this space and its adjacent campus structures—ensuring 
+        a seamless flow within the academic environment.
+      </p>
+
+      <div class="image-row">
+        <img src="../Images/Project4/FirstFloorE.jpg" alt="Contextual Floor Layout 1">
+        <img src="../Images/Project4/SecondFloorE.jpg" alt="Contextual Floor Layout 2">
+      </div>
+
+      <h3>Code and Accessibility</h3>
+      <p>
+        Beyond conceptual intent, the design adheres to the 2021 International Building Code (IBC). The project falls under 
+        Assembly Group A-3 and Business Group B, while the café is classified under Assembly Group A-2. Per IBC 602.1, the building 
+        construction type is compliant, and all indoor rooms will be fully sprinklered, excluding outdoor areas. The building is ADA 
+        accessible, and all design solutions respect the historic designation required by Texas Tech’s campus code.
+      </p>
+
+      <h3>Final Model</h3>
+      <img src="../Images/Project4/BuildingModel.jpg" alt="Physical Model of Cardinal Hall" class="project-image">
+
+      <h3>Project Summary</h3>
+      <p>
+        By applying code criteria strategically, the design not only meets but exceeds safety and accessibility standards. 
+        The Compass Collaborative Center ultimately serves as both a symbolic and functional tool—guiding students toward a shared 
+        future of innovation, community, and professional success.
+      </p>
+    </section>
+
+    <script>
+      const images = [
+        { src: "../Images/Project4/Cafe.jpg", caption: "The Cafe" },
+        { src: "../Images/Project4/LectureHall.jpg", caption: "The Lecture Hall" },
+        { src: "../Images/Project4/Garden.jpg", caption: "The Garden" },
+        { src: "../Images/Project4/Walkway.jpg", caption: "The Walkway" },
+        { src: "../Images/Project4/ExhibitionSpace.jpg", caption: "The Exhibition Space" },
+        { src: "../Images/Project4/Exterior-NE.jpg", caption: "The North East Exterior" },
+        { src: "../Images/Project4/Exterior-NE2.jpg", caption: "The North East Exterior Garden" },
+        { src: "../Images/Project4/Exterior-SE.jpg", caption: "The Front Entrance" },
+        { src: "../Images/Project4/Exterior-NW.jpg", caption: "The Parking Lot" }
+      ];
+
+      let index = 0;
+      const imgElement = document.getElementById("rotatingImage");
+      const captionElement = document.getElementById("caption");
+
+      function updateImage() {
+        imgElement.style.opacity = 0;
+        setTimeout(() => {
+          imgElement.src = images[index].src;
+          captionElement.textContent = images[index].caption;
+          imgElement.style.opacity = 1;
+        }, 300);
+      }
+
+      function nextImage() {
+        index = (index + 1) % images.length;
+        updateImage();
+      }
+
+      function prevImage() {
+        index = (index - 1 + images.length) % images.length;
+        updateImage();
+      }
+
+      setInterval(nextImage, 4000);
+    </script>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Austin Ticknor</p>
+  </footer>
+</body>
+</html>

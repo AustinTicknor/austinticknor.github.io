@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Cohort Pools - Austin Ticknor</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Lora&family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <a href="../index.html" title="Back to Home">
+        <img src="../Images/ProjectInformation/LogoBW.png" alt="Austin Ticknor Logo" class="logo">
+      </a>
+      <div class="name-stack">
+        <h1 class="name-line">Austin</h1>
+        <h1 class="name-line">Ticknor</h1>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content-area">
+    <section class="hero">
+      <h2>The Cohort Pools</h2>
+      <p>Spring 2024</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="project-content">
+      <img src="../Images/Project3/CohortPools.jpg" alt="Cohort Pools Axonometric" class="project-image">
+    </section>
+
+    <section class="project-description">
+      <h3>Design Framework</h3>
+      <p>
+        The <em>Natare Corpus</em> is an investigation into the meshing of independent systems to form a unified whole, inspired by both the city of Austin and the human body. This concept forms the structural and conceptual frame for a series of distinct community pools, each designed to engage Austin’s community in unique ways. The building’s facade communicates this framework of systems and relationships, adapting in form to respond to its site context along Shoal Creek and nearby pedestrian corridors.
+      </p>
+
+      <section class="image-rotator">
+        <div class="rotator-container">
+          <button class="arrow left" onclick="prevImage()">&#10094;</button>
+          <div class="image-wrapper">
+            <img src="../Images/Project3/LapPools.jpg" alt="The Lap Pools" id="rotatingImage">
+            <p id="caption">The Lap Pools</p>
+          </div>
+          <button class="arrow right" onclick="nextImage()">&#10095;</button>
+        </div>
+      </section>
+
+      <h3>Facade and Site Context</h3>
+      <p>
+        The semester’s investigations began in Floydada, Texas, where I studied two courthouse-town facades with different levels of deterioration. Their conditions—reflected visibly through material wear—introduced a key design motif: the life of a building can be expressed through its facade. This idea became a lens through which I analyzed larger urban contexts, ultimately shaping the narrative behind the Natare Corpus.
+      </p>
+
+      <div class="image-row">
+        <img src="../Images/Project3/StreetModel.jpg" alt="Street Relationship Model">
+        <img src="../Images/Project3/AustinModel.jpg" alt="Urban Context Model">
+      </div>
+
+      <h3>Urban Systems as Organism</h3>
+      <p>
+        Shifting to a city scale, I examined downtown Austin’s urban fabric as a facade in itself—one composed of systems that collectively animate the city. Streets, buildings, sidewalks, and geographical features were likened to components of the human body: bones, arteries, organs, and connective tissue. This metaphorical analysis led to a systemic framework that underpins the Natare Corpus.
+      </p>
+
+      <div class="image-row">
+        <img src="../Images/Project3/BasementPlan.jpg" alt="Basement Pool Plan">
+        <img src="../Images/Project3/WaterFallPlan.jpg" alt="Waterfall Pool Plan">
+      </div>
+
+      <h3>Precedent Influence</h3>
+      <p>
+        Precedents such as the Blur Building and the Sutro Baths informed early formal studies. I analyzed their proportions and experiential strategies through collages and iterative extractions. These were translated into volumetric testbeds that informed both the project’s massing and its layered systems.
+      </p>
+
+      <div class="image-row">
+        <img src="../Images/Project3/Elevations2.jpg" alt="Elevation Diagram 1">
+        <img src="../Images/Project3/Elevations1.jpg" alt="Elevation Diagram 2">
+      </div>
+
+      <div class="image-row">
+        <img src="../Images/Project3/Sections1.jpg" alt="Section Diagram 1">
+        <img src="../Images/Project3/Sections2.jpg" alt="Section Diagram 2">
+      </div>
+
+      <h3>Iterative Development</h3>
+      <p>
+        Physical iterations using cardboard helped refine the central architectural focus. An early framework, inspired by the city grid, served as the basis for further development. I layered formal cues from precedent studies onto this framework, moving from rectilinear geometries to more fluid, organic expressions. The final iteration presented a system of layered, interdependent architectural elements—each facade layer expressing a distinct function or system while supporting the others.
+      </p>
+
+      <div class="image-row">
+        <img src="../Images/Project3/BuildingAxo.jpg" alt="Axonometric View of Final Design">
+        <img src="../Images/Project3/BuildingModel.jpg" alt="Physical Model of the Cohort Pools">
+      </div>
+
+      <h3>Project Summary</h3>
+      <p>
+        Ultimately, the <em>Natare Corpus</em> aims to unify the diverse social body of Austin through a structure of independently functioning but mutually supportive spaces. The building’s facade celebrates this interdependence, adapting to the street edge of 4th Street and responding to the natural elements of Shoal Creek. It stands as both a civic gesture to the uniqueness of Austin’s communities and a commentary on the power of collaborative systems in architectural expression.
+      </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <script>
+      const images = [
+        { src: "../Images/Project3/HotColdPools.jpg", caption: "The Hot and Cold Water Pools" },
+        { src: "../Images/Project3/TopPool.jpg", caption: "The Top Pool" },
+        { src: "../Images/Project3/WaterFallPool.jpg", caption: "The Water Fall Pool" }
+      ];
+
+      let index = 0;
+      const imgElement = document.getElementById("rotatingImage");
+      const captionElement = document.getElementById("caption");
+
+      function updateImage() {
+        imgElement.style.opacity = 0;
+        setTimeout(() => {
+          imgElement.src = images[index].src;
+          captionElement.textContent = images[index].caption;
+          imgElement.style.opacity = 1;
+        }, 300);
+      }
+
+      function nextImage() {
+        index = (index + 1) % images.length;
+        updateImage();
+      }
+
+      function prevImage() {
+        index = (index - 1 + images.length) % images.length;
+        updateImage();
+      }
+
+      setInterval(nextImage, 4000);
+    </script>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Austin Ticknor</p>
+  </footer>
+</body>
+</html>

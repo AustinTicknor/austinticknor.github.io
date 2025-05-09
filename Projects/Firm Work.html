@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Firm Work - Austin Ticknor</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Lora&family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <a href="../index.html" title="Back to Home">
+        <img src="../Images/ProjectInformation/LogoBW.png" alt="Austin Ticknor Logo" class="logo">
+      </a>
+      <div class="name-stack">
+        <h1 class="name-line">Austin</h1>
+        <h1 class="name-line">Ticknor</h1>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content-area">
+    <section class="hero">
+      <h2>Firm Work</h2>
+      <p>Explore selected works from my professional experience at Williams Tharp Architecture.</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="image-rotator">
+      <div class="rotator-container">
+        <button class="arrow left" onclick="prevImage()">&#10094;</button>
+        <div class="image-wrapper">
+          <img src="../Images/FirmWork/CulturalArtsCenter.jpg" alt="Cultural Arts Center" id="rotatingImage">
+          <p id="caption">WilliamsTharp - The Cultural Arts Center</p>
+        </div>
+        <button class="arrow right" onclick="nextImage()">&#10095;</button>
+      </div>
+    </section>
+
+    <section class="project-description">
+      <h3>Professional Role</h3>
+      <p>
+        From January 2024 to March 2025, I worked at Williams Tharp Architecture as a Project Coordinator. 
+        During my time there, I contributed to a variety of municipal and hospitality developments, 
+        gaining valuable insight into the technical complexities of architectural design as well as the 
+        operational aspects of managing a professional firm.
+      </p>
+
+      <h3>Project Experience</h3>
+      <p>
+        My contributions ranged from rendering and modeling to participating in early-stage programming, 
+        design documentation, and internal reviews. I was exposed to collaborative workflows and real-world 
+        decision-making that shaped how we addressed client goals within code and budget constraints.
+      </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <script>
+      const images = [
+        { src: "../Images/FirmWork/CulturalArtsCenter.jpg", caption: "WilliamsTharp - The Cultural Arts Center" },
+        { src: "../Images/FirmWork/FreeWeightTopFloor.jpg", caption: "WilliamsTharp - Mustang Irving Park" },
+        { src: "../Images/FirmWork/LodgeRender.jpg", caption: "WilliamsTharp - Montana Lodge" },
+        { src: "../Images/FirmWork/NIGHTFrontEnterance.jpg", caption: "WilliamsTharp - Mustang Irving Park (Night View)" },
+        { src: "../Images/FirmWork/PARTYNIGHTFrontView.jpg", caption: "WilliamsTharp - Mustang Irving Park (Event View)" }
+      ];
+
+      let index = 0;
+      const imgElement = document.getElementById("rotatingImage");
+      const captionElement = document.getElementById("caption");
+
+      function updateImage() {
+        imgElement.style.opacity = 0;
+        setTimeout(() => {
+          imgElement.src = images[index].src;
+          captionElement.textContent = images[index].caption;
+          imgElement.style.opacity = 1;
+        }, 300);
+      }
+
+      function nextImage() {
+        index = (index + 1) % images.length;
+        updateImage();
+      }
+
+      function prevImage() {
+        index = (index - 1 + images.length) % images.length;
+        updateImage();
+      }
+
+      setInterval(nextImage, 4000);
+    </script>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Austin Ticknor</p>
+  </footer>
+</body>
+</html>
